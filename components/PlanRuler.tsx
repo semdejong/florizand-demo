@@ -3,7 +3,7 @@ import { services } from "@/content";
 
 export default function PlanRuler({ active }: { active?: string }) {
   return (
-    <nav className="ruler" aria-label="Legenda van de werkzaamheden">
+    <nav className="ruler" aria-label="Werkzaamheden">
       <ol>
         {services.map((service, index) => {
           const number = String(index + 1).padStart(2, "0");

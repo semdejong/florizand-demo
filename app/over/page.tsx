@@ -23,13 +23,11 @@ export default function OverPage() {
             <p>{welcome.approach}</p>
             <blockquote className="pull">
               <p>Jong, dynamisch en betrouwbaar.</p>
-              <footer>Uit de welkomsttekst van FloriZand, niet een keurmerk dat elders is verdiend.</footer>
+              <footer>Uit de welkomsttekst van FloriZand</footer>
             </blockquote>
             <p>{welcome.area}</p>
             <p>
-              Gevestigd in {company.city}, sinds {company.since}. Dichtbij voor het Westland, en werkzaam
-              in de rest van Zuid-Holland — waaronder de regio Den Haag en Rotterdam. Er is geen kaart met
-              spelden en geen lijst van wijken. Alleen die zin.
+              Gevestigd in {company.city}, sinds {company.since}.
             </p>
             <div className="cta-row">
               <Link className="btn btn-primary" href="/contact">
@@ -45,8 +43,7 @@ export default function OverPage() {
             <h2>{company.person}</h2>
             <p>
               Dave plant de afspraak voor een offerte persoonlijk. Van het eerste gesprek tot de tuin die
-              wordt opgeleverd is hij het aanspreekpunt. Geen wisselend team op deze site, omdat daar geen
-              namen voor bekend zijn.
+              wordt opgeleverd is hij het aanspreekpunt.
             </p>
             <p>
               <a className="text-link" href={company.phoneHref}>

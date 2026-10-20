@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { company, welcome } from "@/content";
-import ClientNote from "@/components/ClientNote";
 import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
@@ -46,10 +45,6 @@ export default function ContactPage() {
             <a className="btn btn-pine" href={company.mapsHref} target="_blank" rel="noopener noreferrer">
               Route plannen
             </a>
-            <ClientNote>
-              Openingstijden zijn nergens gepubliceerd. Tot FloriZand ze aanlevert, blijft het bij een
-              afspraak.
-            </ClientNote>
           </address>
         </div>
         <div className="container" style={{ marginTop: "2rem" }}>

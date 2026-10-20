@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { company, services, sfeer, steps, welcome } from "@/content";
-import ClientNote from "@/components/ClientNote";
 import Contour from "@/components/Contour";
+import GardenGallery, { GardenCta } from "@/components/GardenGallery";
 
 const nieuw = services.filter((service) => service.group === "nieuw");
 const onderhoud = services.filter((service) => service.group === "onderhoud");
@@ -40,7 +40,7 @@ export default function HomeMain() {
               priority
               sizes="(min-width: 1120px) 1120px, 100vw"
             />
-            <figcaption className="hero-cap">Sfeerbeeld — geen project van FloriZand</figcaption>
+            <figcaption className="sfeer-flag">Sfeerbeeld</figcaption>
           </figure>
         </div>
       </section>
@@ -87,11 +87,11 @@ export default function HomeMain() {
             <h2>Negen werkzaamheden</h2>
             <p className="lede">
               Onze werkzaamheden omvatten de meest uiteenlopende terreinen. Elk onderdeel heeft een eigen
-              blad, met bespreekpunten en zonder verzonnen prijzen.
+              pagina.
             </p>
             <p>
               <Link className="text-link" href="/diensten">
-                Open de legenda van alle werkzaamheden
+                Bekijk alle werkzaamheden
               </Link>
             </p>
           </div>
@@ -117,7 +117,7 @@ export default function HomeMain() {
                     </h4>
                     <p>{service.text}</p>
                     <Link className="text-link" href={`/diensten/${service.id}`}>
-                      Open dit blad
+                      Meer over deze dienst
                     </Link>
                   </div>
                 </li>
@@ -146,7 +146,7 @@ export default function HomeMain() {
                     </h4>
                     <p>{service.text}</p>
                     <Link className="text-link" href={`/diensten/${service.id}`}>
-                      Open dit blad
+                      Meer over deze dienst
                     </Link>
                   </div>
                 </li>
@@ -162,7 +162,7 @@ export default function HomeMain() {
             <div className="illu">
               <Image
                 src="/illustraties/ill-speeltuin.jpg"
-                alt="Illustratie van een lege speeltuin met klimrek en zandbak, zonder personen. Geen foto van een project."
+                alt="Illustratie van een tuin met een houten klimrek en een zandbak."
                 width={1024}
                 height={1024}
                 sizes="(min-width: 860px) 480px, 100vw"
@@ -202,8 +202,7 @@ export default function HomeMain() {
             <p className="eyebrow">Werkwijze</p>
             <h2>Van kennismaking tot oplevering</h2>
             <p className="lede">
-              Zo loopt een traject. Dit is een beschrijving van de stappen, geen belofte over duur of
-              planning.
+              Zo loopt een traject, van de eerste afspraak met Dave tot de opgeleverde tuin.
             </p>
           </div>
           <ol className="process">
@@ -215,10 +214,6 @@ export default function HomeMain() {
               </li>
             ))}
           </ol>
-          <ClientNote>
-            Een doorlooptijd of startdatum staat nergens gepubliceerd. Die kan hier later bij de stappen
-            komen te staan.
-          </ClientNote>
           <p style={{ marginTop: "1.25rem" }}>
             <Link className="text-link" href="/werkwijze">
               Lees de vijf stappen op een eigen pagina
@@ -232,48 +227,19 @@ export default function HomeMain() {
           <div className="section-head">
             <Contour className="section-contour" />
             <p className="eyebrow">Projecten</p>
-            <h2>Binnenkort: foto&apos;s van onze eigen projecten</h2>
+            <h2>Uw tuin, van plan tot oplevering</h2>
             <p className="lede">
-              De oude pagina Foto&apos;s haalde beelden uit een album dat niet meer bereikbaar is. Echte
-              projectfoto&apos;s van FloriZand horen op deze plek. Dave heeft ze waarschijnlijk op zijn
-              telefoon.
-            </p>
-            <p>
-              <Link className="text-link" href="/projecten">
-                Open het album met lege kaders
-              </Link>
+              Ontwerp, bestrating, water, gazon, hout en onderhoud. Van het eerste plan tot de tuin die
+              wordt opgeleverd, met {company.person} als vast contact.
             </p>
           </div>
-          <div className="slots" aria-label="Gereserveerd voor projectfoto's van FloriZand">
-            {["Tuinfoto 1", "Tuinfoto 2", "Tuinfoto 3"].map((label) => (
-              <div key={label} className="slot">
-                <strong>{label}</strong>
-                Plek gereserveerd. Nog geen projectfoto.
-              </div>
-            ))}
-          </div>
-          <h3>Sfeerbeelden, geen projecten</h3>
+          <GardenGallery variant="mosaic" />
+          <GardenCta />
           <p>
-            De vijf beelden hieronder stonden op de huidige site. De herkomst is niet bevestigd. Ze zijn
-            sfeer, en worden niet gepresenteerd als werk van FloriZand.
+            <Link className="text-link" href="/projecten">
+              Tuinen in beeld
+            </Link>
           </p>
-          <div className="sfeer-grid">
-            {sfeer.map((image) => (
-              <figure key={image.src} className="sfeer">
-                <div className="illu">
-                  <Image
-                    src={image.src}
-                    alt={image.alt}
-                    width={960}
-                    height={340}
-                    sizes="(min-width: 800px) 50vw, 100vw"
-                  />
-                  <span className="sfeer-flag">Sfeerbeeld</span>
-                </div>
-                <figcaption>{image.caption}</figcaption>
-              </figure>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -317,12 +283,9 @@ export default function HomeMain() {
       <section className="section area" id="werkgebied">
         <div className="container">
           <p className="eyebrow">Werkgebied</p>
-          <h2>Westland en geheel Zuid-Holland</h2>
+          <h2>Vanuit {company.city}</h2>
           <blockquote>{welcome.area}</blockquote>
-          <p style={{ marginTop: "1.25rem", maxWidth: "40rem" }}>
-            Gevestigd in {company.city}, sinds {company.since}. Dichtbij voor het Westland, en ook
-            werkzaam in de rest van Zuid-Holland — waaronder de regio Den Haag en Rotterdam.
-          </p>
+          <p className="area-note">Sinds {company.since} gevestigd in het Westland.</p>
         </div>
       </section>
 
@@ -334,8 +297,7 @@ export default function HomeMain() {
           </p>
           <h2>Vraag vrijblijvend een offerte aan</h2>
           <p style={{ maxWidth: "38rem" }}>
-            Dave neemt persoonlijk contact met u op om een afspraak te maken. Een reactietermijn is niet
-            vastgelegd.
+            Dave neemt persoonlijk contact met u op om een afspraak te maken.
           </p>
           <div className="cta-row">
             <Link className="btn btn-primary" href="/offerte-aanvragen">
@@ -345,9 +307,6 @@ export default function HomeMain() {
               Bel Dave: {company.phoneDisplay}
             </a>
           </div>
-          <ClientNote>
-            Hier kan een reactietermijn komen te staan, zodra FloriZand die wil noemen.
-          </ClientNote>
         </div>
       </section>
 
@@ -386,10 +345,6 @@ export default function HomeMain() {
                 Route plannen
               </a>
             </div>
-            <ClientNote>
-              Openingstijden zijn nergens gepubliceerd. Zolang die ontbreken, blijft hier staan: op
-              afspraak.
-            </ClientNote>
           </div>
           <aside className="paper-card">
             <h3>Liever een formulier?</h3>
@@ -403,8 +358,8 @@ export default function HomeMain() {
 
       <section className="section" id="faq" style={{ paddingTop: 0 }}>
         <div className="container narrow">
-          <p className="eyebrow">Veelgestelde vragen</p>
-          <h2>Alleen wat vaststaat</h2>
+          <p className="eyebrow">Goed om te weten</p>
+          <h2>Veelgestelde vragen</h2>
           <div className="faq-list">
             <details className="faq">
               <summary>In welk gebied werkt u?</summary>
@@ -421,8 +376,7 @@ export default function HomeMain() {
               <div className="faq-body">
                 <p>
                   Telefonisch via {company.person}, via {company.email}, of met het formulier op deze
-                  site. Dave maakt graag persoonlijk een afspraak. De aanvraag is vrijblijvend. Een
-                  reactietermijn is niet gepubliceerd.
+                  site. Dave maakt graag persoonlijk een afspraak. De aanvraag is vrijblijvend.
                 </p>
                 <p>
                   <Link className="text-link" href="/offerte-aanvragen">

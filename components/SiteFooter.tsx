@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { company, nav } from "@/content";
-import ClientNote from "@/components/ClientNote";
 
 export default function SiteFooter() {
   return (
@@ -51,13 +50,7 @@ export default function SiteFooter() {
         </div>
       </div>
       <div className="container footer-base">
-        <p>
-          KvK {company.kvk}
-        </p>
-        <ClientNote>
-          Dit nummer staat niet op de huidige website en is niet gecontroleerd op kvk.nl. Bevestig het
-          voordat het als vast gegeven op de site staat.
-        </ClientNote>
+        <p>KvK {company.kvk}</p>
         <p style={{ marginTop: "1rem" }}>
           <a className="text-link" href="https://sleads.nl" target="_blank" rel="noopener noreferrer">
             Concept door Sleads

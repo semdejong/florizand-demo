@@ -2,13 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { company } from "@/content";
 import { stepStory } from "@/siteCopy";
-import ClientNote from "@/components/ClientNote";
 import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title: "Werkwijze",
   description:
-    "Van kennismaking met Dave Emke tot een gespecificeerde offerte en de aanleg. Een beschrijving van de stappen, zonder vaste planning.",
+    "Van kennismaking met Dave Emke tot een gespecificeerde offerte en de aanleg van uw tuin.",
 };
 
 export default function WerkwijzePage() {
@@ -17,7 +16,7 @@ export default function WerkwijzePage() {
       <PageHero
         eyebrow="Werkwijze"
         title="Van kennismaking tot oplevering"
-        lede="Vijf stappen, getekend als een doorsnede. Dit is de volgorde van het traject, geen belofte over duur of planning."
+        lede="Vijf stappen, van de eerste afspraak met Dave tot de opgeleverde tuin."
       />
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container werk-layout">
@@ -47,7 +46,6 @@ export default function WerkwijzePage() {
             <Link className="btn btn-primary" href="/offerte-aanvragen">
               Naar het formulier
             </Link>
-            <ClientNote>Een reactietermijn en een doorlooptijd kunnen hier later bij de stappen komen.</ClientNote>
           </aside>
         </div>
       </section>

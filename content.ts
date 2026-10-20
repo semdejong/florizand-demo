@@ -49,7 +49,7 @@ export const services: Service[] = [
     title: "Tuinontwerp",
     text: "Een ontwerp voor uw tuin, als basis voor de aanleg. In overleg, afgestemd op wat u met de tuin wilt.",
     image: "/illustraties/ill-ontwerp.jpg",
-    alt: "Illustratie van een tuinontwerp in bovenaanzicht, met paden, vijver en vlonder. Geen foto van een project.",
+    alt: "Illustratie van een tuinontwerp in bovenaanzicht, met paden, vijver en vlonder.",
     group: "nieuw",
   },
   {
@@ -57,7 +57,7 @@ export const services: Service[] = [
     title: "Tuinaanleg",
     text: "De aanleg van de tuin volgens wat is afgesproken, inclusief de inrichting die bij het ontwerp hoort.",
     image: "/illustraties/ill-aanleg.jpg",
-    alt: "Illustratie van een nieuw aangeplante border. Geen foto van een project.",
+    alt: "Illustratie van een nieuw aangeplante border.",
     group: "nieuw",
   },
   {
@@ -65,7 +65,7 @@ export const services: Service[] = [
     title: "(Sier)bestrating",
     text: "Bestrating en sierbestrating als onderdeel van de tuin.",
     image: "/illustraties/ill-bestrating.jpg",
-    alt: "Illustratie van sierbestrating in keperverband met een groene rand. Geen foto van een project.",
+    alt: "Illustratie van sierbestrating in keperverband met een groene rand.",
     group: "nieuw",
   },
   {
@@ -73,7 +73,7 @@ export const services: Service[] = [
     title: "Aanleg van vijvers",
     text: "Het aanleggen van een vijver in de tuin.",
     image: "/illustraties/ill-vijver.jpg",
-    alt: "Illustratie van een kleine vijver met irissen en een stenen rand. Geen foto van een project.",
+    alt: "Illustratie van een kleine vijver met irissen en een stenen rand.",
     group: "nieuw",
   },
   {
@@ -81,7 +81,7 @@ export const services: Service[] = [
     title: "Aanleg van gazons (gras of kunstgras)",
     text: "Een gazon van gras, of van kunstgras. Beide staan genoemd bij de werkzaamheden.",
     image: "/illustraties/ill-gazon.jpg",
-    alt: "Illustratie van een gazon langs een zandpad en een beplantingsrand. Geen foto van een project.",
+    alt: "Illustratie van een gazon langs een zandpad en een beplantingsrand.",
     group: "nieuw",
   },
   {
@@ -89,7 +89,7 @@ export const services: Service[] = [
     title: "Aanleg van kindvriendelijke (speel)tuinen",
     text: "Een tuin die is ingericht om in te spelen, als eigen werkzaamheid naast het tuinontwerp.",
     image: "/illustraties/ill-speeltuin.jpg",
-    alt: "Illustratie van een lege tuin met een houten klimrek en een zandbak, zonder personen. Geen foto van een project.",
+    alt: "Illustratie van een tuin met een houten klimrek en een zandbak.",
     group: "nieuw",
   },
   {
@@ -97,7 +97,7 @@ export const services: Service[] = [
     title: "Aanleg van vlonders, veranda's, pergola's en blokhutten",
     text: "Houten elementen in de tuin: een vlonder, veranda, pergola of blokhut.",
     image: "/illustraties/ill-vlonder.jpg",
-    alt: "Illustratie van een houten vlonder met pergola en een blokhut. Geen foto van een project.",
+    alt: "Illustratie van een houten vlonder met pergola en een blokhut.",
     group: "nieuw",
   },
   {
@@ -105,7 +105,7 @@ export const services: Service[] = [
     title: "Tuinonderhoud",
     text: "Het onderhoud van een bestaande tuin. Dit kan los van een nieuwe aanleg.",
     image: "/illustraties/ill-onderhoud.jpg",
-    alt: "Illustratie van een geschoren haag en een snoeischaar op een stenen rand. Geen foto van een project.",
+    alt: "Illustratie van een geschoren haag en een snoeischaar op een stenen rand.",
     group: "onderhoud",
   },
   {
@@ -113,7 +113,7 @@ export const services: Service[] = [
     title: "Tuinrenovatie",
     text: "Het vernieuwen van een tuin die er al ligt.",
     image: "/illustraties/ill-renovatie.jpg",
-    alt: "Illustratie van een border die deels wordt vernieuwd, met contourlijnen van een nieuw plan. Geen foto van een project.",
+    alt: "Illustratie van een border die deels wordt vernieuwd, met contourlijnen van een nieuw plan.",
     group: "onderhoud",
   },
 ];
@@ -144,30 +144,186 @@ export const steps = [
 export const sfeer = [
   {
     src: "/sfeer/slider-01.jpg",
-    alt: "Sfeerbeeld van een vijvertuin met een houten vlonder. Geen projectfoto van FloriZand.",
-    caption: "Sfeerbeeld: vijver en vlonder",
+    alt: "Sfeerbeeld van een vijvertuin met een houten vlonder.",
+    caption: "Vijver en vlonder",
   },
   {
     src: "/sfeer/slider-02.jpg",
-    alt: "Sfeerbeeld van tuingereedschap op een gazon. Geen projectfoto van FloriZand.",
-    caption: "Sfeerbeeld: gereedschap op gras",
+    alt: "Sfeerbeeld van tuingereedschap op een gazon.",
+    caption: "Gereedschap op gras",
   },
   {
     src: "/sfeer/slider-03.jpg",
-    alt: "Sfeerbeeld van het uitrollen van graszoden. Geen projectfoto van FloriZand.",
-    caption: "Sfeerbeeld: graszoden",
+    alt: "Sfeerbeeld van het uitrollen van graszoden.",
+    caption: "Graszoden",
   },
   {
     src: "/sfeer/slider-04.jpg",
-    alt: "Sfeerbeeld van een ingekleurde tuinontwerpschets. Geen projectfoto van FloriZand.",
-    caption: "Sfeerbeeld: ontwerpschets",
+    alt: "Sfeerbeeld van een ingekleurde tuinontwerpschets.",
+    caption: "Ontwerpschets",
   },
   {
     src: "/sfeer/slider-05.jpg",
-    alt: "Sfeerbeeld van een strak aangelegde tuin met hagen. Geen projectfoto van FloriZand.",
-    caption: "Sfeerbeeld: strakke tuin",
+    alt: "Sfeerbeeld van een strak aangelegde tuin met hagen.",
+    caption: "Strakke tuin",
   },
 ] as const;
+
+export type GardenShot = {
+  src: string;
+  alt: string;
+  kind: "illustratie" | "sfeer";
+};
+
+export type GardenChapter = {
+  id: string;
+  title: string;
+  summary: string;
+  text: string;
+  href: string;
+  links: { href: string; label: string }[];
+  shots: GardenShot[];
+};
+
+export const gardenChapters: GardenChapter[] = [
+  {
+    id: "ontwerp",
+    title: "Ontwerp",
+    summary: "Tuinontwerp en aanleg",
+    text: "Tuinontwerp is het vertrekpunt. Ontwerp en aanleg blijven in één hand, met Dave Emke als vast contact van het eerste gesprek tot de opgeleverde tuin.",
+    href: "/diensten/tuinontwerp",
+    links: [
+      { href: "/diensten/tuinontwerp", label: "Tuinontwerp" },
+      { href: "/diensten/tuinaanleg", label: "Tuinaanleg" },
+      { href: "/diensten/speeltuinen", label: "Kindvriendelijke tuinen" },
+    ],
+    shots: [
+      {
+        src: "/illustraties/ill-ontwerp.jpg",
+        alt: "Illustratie van een tuinontwerp in bovenaanzicht, met paden, vijver en vlonder.",
+        kind: "illustratie",
+      },
+      {
+        src: "/sfeer/slider-04.jpg",
+        alt: "Sfeerbeeld van een ingekleurde tuinontwerpschets.",
+        kind: "sfeer",
+      },
+      {
+        src: "/illustraties/ill-aanleg.jpg",
+        alt: "Illustratie van een nieuw aangeplante border.",
+        kind: "illustratie",
+      },
+      {
+        src: "/illustraties/ill-speeltuin.jpg",
+        alt: "Illustratie van een tuin met een houten klimrek en een zandbak.",
+        kind: "illustratie",
+      },
+    ],
+  },
+  {
+    id: "bestrating",
+    title: "Bestrating",
+    summary: "Paden, terrassen en sierverband",
+    text: "(Sier)bestrating hoort bij de tuin: een pad, een terras of een sierverband, meegenomen in het ontwerp en in de gespecificeerde offerte.",
+    href: "/diensten/bestrating",
+    links: [{ href: "/diensten/bestrating", label: "(Sier)bestrating" }],
+    shots: [
+      {
+        src: "/illustraties/ill-bestrating.jpg",
+        alt: "Illustratie van sierbestrating in keperverband met een groene rand.",
+        kind: "illustratie",
+      },
+    ],
+  },
+  {
+    id: "water",
+    title: "Water",
+    summary: "Aanleg van vijvers",
+    text: "De aanleg van vijvers staat apart bij de werkzaamheden. Vorm, rand en de beplanting eromheen komen in het overleg met Dave.",
+    href: "/diensten/vijvers",
+    links: [{ href: "/diensten/vijvers", label: "Aanleg van vijvers" }],
+    shots: [
+      {
+        src: "/sfeer/slider-01.jpg",
+        alt: "Sfeerbeeld van een vijvertuin met een houten vlonder.",
+        kind: "sfeer",
+      },
+      {
+        src: "/illustraties/ill-vijver.jpg",
+        alt: "Illustratie van een kleine vijver met irissen en een stenen rand.",
+        kind: "illustratie",
+      },
+    ],
+  },
+  {
+    id: "gazon",
+    title: "Gazon",
+    summary: "Gras of kunstgras",
+    text: "Bij de werkzaamheden staat de aanleg van gazons genoemd als gras of als kunstgras. Welke van de twee past bij uw tuin, bespreekt u met Dave.",
+    href: "/diensten/gazons",
+    links: [{ href: "/diensten/gazons", label: "Aanleg van gazons" }],
+    shots: [
+      {
+        src: "/sfeer/slider-03.jpg",
+        alt: "Sfeerbeeld van het uitrollen van graszoden.",
+        kind: "sfeer",
+      },
+      {
+        src: "/illustraties/ill-gazon.jpg",
+        alt: "Illustratie van een gazon langs een zandpad en een beplantingsrand.",
+        kind: "illustratie",
+      },
+    ],
+  },
+  {
+    id: "hout",
+    title: "Hout",
+    summary: "Vlonder, veranda, pergola, blokhut",
+    text: "Vlonders, veranda's, pergola's en blokhutten vallen onder één werkzaamheid. Welke u nodig hebt, neemt Dave op in het gesprek en in de offerte.",
+    href: "/diensten/vlonders",
+    links: [{ href: "/diensten/vlonders", label: "Vlonders, veranda's, pergola's en blokhutten" }],
+    shots: [
+      {
+        src: "/illustraties/ill-vlonder.jpg",
+        alt: "Illustratie van een houten vlonder met pergola en een blokhut.",
+        kind: "illustratie",
+      },
+    ],
+  },
+  {
+    id: "onderhoud",
+    title: "Onderhoud",
+    summary: "Bijhouden of vernieuwen",
+    text: "Tuinonderhoud kan los van een nieuwe aanleg. Tuinrenovatie is er voor een bestaande tuin die vernieuwd wordt.",
+    href: "/diensten/onderhoud",
+    links: [
+      { href: "/diensten/onderhoud", label: "Tuinonderhoud" },
+      { href: "/diensten/renovatie", label: "Tuinrenovatie" },
+    ],
+    shots: [
+      {
+        src: "/sfeer/slider-05.jpg",
+        alt: "Sfeerbeeld van een strak aangelegde tuin met hagen.",
+        kind: "sfeer",
+      },
+      {
+        src: "/illustraties/ill-onderhoud.jpg",
+        alt: "Illustratie van een geschoren haag en een snoeischaar op een stenen rand.",
+        kind: "illustratie",
+      },
+      {
+        src: "/sfeer/slider-02.jpg",
+        alt: "Sfeerbeeld van tuingereedschap op een gazon.",
+        kind: "sfeer",
+      },
+      {
+        src: "/illustraties/ill-renovatie.jpg",
+        alt: "Illustratie van een border die deels wordt vernieuwd, met contourlijnen van een nieuw plan.",
+        kind: "illustratie",
+      },
+    ],
+  },
+];
 
 export const nav = [
   { label: "Diensten", href: "/diensten" },

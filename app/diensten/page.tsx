@@ -19,8 +19,8 @@ export default function DienstenPage() {
     <>
       <PageHero
         eyebrow="Diensten"
-        title="Negen bladen, twee routes"
-        lede="Onze werkzaamheden omvatten de meest uiteenlopende terreinen. Hier staan ze uit elkaar, als een legenda bij een tuinplan, zodat u de route kiest die bij uw tuin past."
+        title="Negen werkzaamheden, twee routes"
+        lede="Onze werkzaamheden omvatten de meest uiteenlopende terreinen. Kies de route die bij uw tuin past."
       />
       <div className="container">
         <PlanRuler />
@@ -45,7 +45,7 @@ export default function DienstenPage() {
                     <p className="chapter-no small">{String(index + 1).padStart(2, "0")}</p>
                     <h3>{service.title}</h3>
                     <p>{service.text}</p>
-                    <span className="path-go">Open dit blad</span>
+                    <span className="path-go">Meer over deze dienst</span>
                   </div>
                 </Link>
               </li>
@@ -73,7 +73,7 @@ export default function DienstenPage() {
                     <p className="chapter-no small">{String(nieuw.length + index + 1).padStart(2, "0")}</p>
                     <h3>{service.title}</h3>
                     <p>{service.text}</p>
-                    <span className="path-go">Open dit blad</span>
+                    <span className="path-go">Meer over deze dienst</span>
                   </div>
                 </Link>
               </li>

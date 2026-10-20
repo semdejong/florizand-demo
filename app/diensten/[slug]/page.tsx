@@ -4,7 +4,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { company, services, serviceById } from "@/content";
 import { serviceStory } from "@/siteCopy";
-import NotDrawn from "@/components/NotDrawn";
 import PageHero from "@/components/PageHero";
 import PlanRuler from "@/components/PlanRuler";
 
@@ -46,13 +45,13 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
           <div>
             <div className="illu sheet-photo">
               <Image src={service.image} alt={service.alt} width={1024} height={1024} priority sizes="(min-width: 900px) 640px, 100vw" />
-              <span className="illu-label">Illustratie, geen projectfoto</span>
+              <span className="illu-label">Illustratie</span>
             </div>
             {story.paragraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
             <h2>Bespreekpunten met Dave</h2>
-            <p>Dit zijn onderwerpen voor het gesprek. Het zijn geen specificaties en geen beloften.</p>
+            <p>Deze punten neemt u door met Dave, zodat de offerte past bij uw tuin.</p>
             <ul className="talk-list">
               {story.talk.map((item) => (
                 <li key={item}>{item}</li>
@@ -67,15 +66,33 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
               </a>
             </div>
           </div>
-          <NotDrawn />
+          <aside className="paper-card">
+            <p className="eyebrow">Vast contact</p>
+            <h2>{company.person}</h2>
+            <p>Dave maakt graag persoonlijk een afspraak. U ontvangt een gespecificeerde offerte. De aanvraag is vrijblijvend.</p>
+            <p>
+              <a className="text-link" href={company.phoneHref}>
+                {company.phoneDisplay}
+              </a>
+              <br />
+              <a className="text-link" href={company.emailHref}>
+                {company.email}
+              </a>
+            </p>
+            <div className="cta-row">
+              <Link className="btn btn-primary" href={service.id === "speeltuinen" ? "/offerte-aanvragen#speeltuin" : "/offerte-aanvragen"}>
+                Offerte aanvragen
+              </Link>
+            </div>
+          </aside>
         </div>
         <div className="container leaf-nav">
           <Link href={`/diensten/${previous.id}`}>
-            <span>Vorig blad</span>
+            <span>Vorige dienst</span>
             {previous.title}
           </Link>
           <Link href={`/diensten/${next.id}`}>
-            <span>Volgend blad</span>
+            <span>Volgende dienst</span>
             {next.title}
           </Link>
         </div>

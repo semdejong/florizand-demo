@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { company, welcome } from "@/content";
-import ClientNote from "@/components/ClientNote";
 import QuoteForm from "@/components/QuoteForm";
 
 export const metadata: Metadata = {
@@ -33,8 +32,7 @@ export default function OffertePage() {
           <p className="eyebrow">Offerte</p>
           <h1>Vraag vrijblijvend een offerte aan</h1>
           <p className="lede">
-            Dave neemt persoonlijk contact met u op om een afspraak te maken. Er is geen vaste
-            reactietermijn gepubliceerd.
+            Dave neemt persoonlijk contact met u op om een afspraak te maken.
           </p>
           <div className="cta-row">
             <a className="btn btn-primary" href={company.phoneHref}>
@@ -99,10 +97,9 @@ export default function OffertePage() {
               <summary>Wat kost een offerte?</summary>
               <div className="faq-body">
                 <p>
-                  De aanvraag is vrijblijvend. Wat een offerte zelf kost, staat niet op de huidige site
-                  en wordt hier niet ingevuld.
+                  De aanvraag is vrijblijvend. Dave maakt persoonlijk een afspraak en u ontvangt een
+                  gespecificeerde offerte.
                 </p>
-                <ClientNote>Het tarief van een offerte, als FloriZand dat wil noemen.</ClientNote>
               </div>
             </details>
             <details className="faq">
@@ -129,10 +126,7 @@ export default function OffertePage() {
             <details className="faq">
               <summary>Hoe snel kunt u beginnen?</summary>
               <div className="faq-body">
-                <p>
-                  Dat bespreekt Dave met u bij de afspraak. Een vaste termijn is niet gepubliceerd.
-                </p>
-                <ClientNote>Een doorlooptijd of eerstvolgende startdatum.</ClientNote>
+                <p>Dave bespreekt de planning met u bij de afspraak, afgestemd op de werkzaamheden.</p>
               </div>
             </details>
           </div>
