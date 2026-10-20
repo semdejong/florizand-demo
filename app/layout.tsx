@@ -1,42 +1,83 @@
 import type { Metadata, Viewport } from "next";
-import { Geist } from "next/font/google";
-import type { CSSProperties } from "react";
+import { Outfit, Source_Sans_3 } from "next/font/google";
 import "./globals.css";
-import { content } from "@/content";
+import { company } from "@/content";
 import SleadsBadge from "@/components/SleadsBadge";
+import SiteHeader from "@/components/SiteHeader";
+import SiteFooter from "@/components/SiteFooter";
+import MobileBar from "@/components/MobileBar";
 
-const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
+const outfit = Outfit({
+  subsets: ["latin"],
+  variable: "--font-outfit",
+  display: "swap",
+});
+
+const sourceSans = Source_Sans_3({
+  subsets: ["latin"],
+  variable: "--font-source",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  title: content.seo.title,
-  description: content.seo.description,
+  title: {
+    default: "Hoveniersbedrijf FloriZand | Tuinontwerp, aanleg en onderhoud",
+    template: "%s | FloriZand",
+  },
+  description:
+    "Hoveniersbedrijf FloriZand, voor uw tuinontwerp, aanleg en onderhoud. Sinds 2010 gevestigd in 's-Gravenzande, werkzaam in het Westland en geheel Zuid-Holland.",
   robots: {
     index: false,
     follow: false,
     nocache: true,
     googleBot: { index: false, follow: false, noimageindex: true },
   },
-  icons: content.company.logo ? { icon: content.company.logo } : undefined,
 };
 
-export const viewport: Viewport = { themeColor: content.colors.primary };
+export const viewport: Viewport = { themeColor: "#f3eee4" };
 
-const c = content.colors;
-const themeVars = {
-  "--brand": c.primary,
-  "--brand-fg": c.primaryForeground,
-  "--accent": c.accent,
-  "--background": c.background,
-  "--foreground": c.foreground,
-  "--muted": c.muted,
-} as CSSProperties;
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LandscapingBusiness",
+  name: company.name,
+  telephone: "+31641222325",
+  email: company.email,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: company.street,
+    postalCode: company.postalCode,
+    addressLocality: company.city,
+    addressCountry: "NL",
+  },
+  areaServed: ["Westland", "Zuid-Holland"],
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: "+31641222325",
+    email: company.email,
+    contactType: "customer service",
+    name: company.person,
+    availableLanguage: "Dutch",
+  },
+};
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang={content.seo.lang} style={themeVars} className={`${geistSans.variable} h-full scroll-smooth antialiased`}>
+    <html
+      lang="nl"
+      className={`${outfit.variable} ${sourceSans.variable} h-full antialiased`}
+    >
       <body className="min-h-full flex flex-col">
-        {children}
+        <a className="skip" href="#inhoud">
+          Naar de inhoud
+        </a>
+        <SiteHeader />
+        <main id="inhoud" className="flex-1">
+          {children}
+        </main>
+        <SiteFooter />
+        <MobileBar />
         <SleadsBadge />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </body>
     </html>
   );
