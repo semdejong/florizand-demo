@@ -31,7 +31,7 @@ export const welcome = {
   contactIntro:
     "Neem vrijblijvend contact op met Hoveniersbedrijf FloriZand voor al uw tuingerelateerde zaken via onderstaande gegevens:",
   appointment:
-    "Onderstaand ziet u het adres van Hoveniersbedrijf FloriZand. Aarzel niet om contact op te nemen voor een vrijblijvend gesprek of een afspraak.",
+    "Aarzel niet om contact op te nemen voor een vrijblijvend gesprek of een afspraak.",
 } as const;
 
 export type Service = {

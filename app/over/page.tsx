@@ -14,7 +14,7 @@ export default function OverPage() {
     <>
       <PageHero
         eyebrow="Over FloriZand"
-        title={welcome.title}
+        title="Sinds 2010 in 's-Gravenzande"
         lede={welcome.lead}
       />
       <section className="section" style={{ paddingTop: 0 }}>
@@ -54,7 +54,7 @@ export default function OverPage() {
                 {company.email}
               </a>
             </p>
-            <p className="logo-tag">{company.tagline}</p>
+            <p className="dave-marks">{company.tagline.replaceAll(" | ", " · ")}</p>
           </aside>
         </div>
         <div className="container marks">

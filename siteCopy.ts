@@ -124,7 +124,7 @@ export const stepStory = [
   {
     title: "Gespecificeerde offerte",
     text: "U ontvangt een gespecificeerde offerte. De aanvraag is vrijblijvend.",
-    more: "Gespecificeerd betekent: de werkzaamheden staan uitgeschreven. De aanvraag is vrijblijvend.",
+    more: "Gespecificeerd betekent: de werkzaamheden staan uitgeschreven, stuk voor stuk.",
   },
   {
     title: "Aanleg",

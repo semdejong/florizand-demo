@@ -52,6 +52,7 @@ export default function SiteHeader() {
         <button
           type="button"
           className="menu-toggle"
+          aria-label={open ? "Menu sluiten" : "Menu openen"}
           aria-expanded={open}
           aria-controls="site-menu"
           onClick={() => setOpen((value) => !value)}
