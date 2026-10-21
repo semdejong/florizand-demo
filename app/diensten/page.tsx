@@ -25,7 +25,7 @@ export default function DienstenPage() {
       <div className="container">
         <PlanRuler />
       </div>
-      <section className="section" id="nieuwe-tuin">
+      <section data-section="nieuwe-tuin" className="section" id="nieuwe-tuin">
         <div className="container">
           <p className="eyebrow">Route 1</p>
           <h2>Nieuwe tuin: ontwerp en aanleg</h2>
@@ -53,7 +53,7 @@ export default function DienstenPage() {
           </ul>
         </div>
       </section>
-      <section className="section" id="onderhoud" style={{ paddingTop: 0 }}>
+      <section data-section="onderhoud" className="section" id="onderhoud" style={{ paddingTop: 0 }}>
         <div className="container">
           <p className="eyebrow">Route 2</p>
           <h2>Onderhoud en renovatie</h2>
@@ -83,7 +83,7 @@ export default function DienstenPage() {
             {welcome.approach}
           </p>
           <div className="cta-row">
-            <Link className="btn btn-primary" href="/offerte-aanvragen">
+            <Link className="btn btn-primary" data-cta="offerte" href="/offerte-aanvragen">
               Offerte aanvragen
             </Link>
             <Link className="btn btn-ghost" href="/werkwijze">

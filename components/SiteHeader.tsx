@@ -46,7 +46,7 @@ export default function SiteHeader() {
           <span className="sr-only">Bel Dave, </span>
           {company.phoneDisplay}
         </a>
-        <Link className="btn btn-primary header-offerte" href="/offerte-aanvragen">
+        <Link className="btn btn-primary header-offerte" data-cta="offerte" href="/offerte-aanvragen">
           Offerte aanvragen
         </Link>
         <button
@@ -79,7 +79,7 @@ export default function SiteHeader() {
               </Link>
             );
           })}
-          <Link href="/offerte-aanvragen" onClick={() => setOpen(false)}>
+          <Link data-cta="offerte" href="/offerte-aanvragen" onClick={() => setOpen(false)}>
             Offerte aanvragen
           </Link>
           <a href={company.phoneHref}>Bel Dave: {company.phoneDisplay}</a>

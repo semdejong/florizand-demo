@@ -16,7 +16,7 @@ export default function ProjectenPage() {
         title="Tuinen in beeld"
         lede="Van het eerste ontwerp tot de opgeleverde tuin. Bestrating, water, gazon, hout en onderhoud, met Dave als vast contact."
       />
-      <section className="section" style={{ paddingTop: 0 }}>
+      <section data-section="projecten-intro" className="section" style={{ paddingTop: 0 }}>
         <div className="container">
           <GardenGallery variant="editorial" />
           <GardenCta />

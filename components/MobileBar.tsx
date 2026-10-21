@@ -7,7 +7,7 @@ export default function MobileBar() {
       <a className="btn btn-primary" href={company.phoneHref}>
         Bel Dave
       </a>
-      <Link className="btn btn-ghost" href="/offerte-aanvragen">
+      <Link className="btn btn-ghost" data-cta="offerte" href="/offerte-aanvragen">
         Offerte
       </Link>
     </div>

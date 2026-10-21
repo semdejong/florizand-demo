@@ -12,7 +12,7 @@ export default function PageHero({
   index?: string;
 }) {
   return (
-    <section className="page-hero">
+    <section data-section="page-hero" className="page-hero">
       <Contour className="page-hero-contour" />
       <div className="container page-hero-grid">
         {index ? (

@@ -17,7 +17,7 @@ export default function OverPage() {
         title="Sinds 2010 in 's-Gravenzande"
         lede={welcome.lead}
       />
-      <section className="section" style={{ paddingTop: 0 }}>
+      <section data-section="over-intro" className="section" style={{ paddingTop: 0 }}>
         <div className="container about-grid">
           <article className="letter">
             <p>{welcome.approach}</p>

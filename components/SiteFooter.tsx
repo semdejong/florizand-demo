@@ -44,7 +44,7 @@ export default function SiteFooter() {
               </li>
             ))}
             <li>
-              <Link href="/offerte-aanvragen">Offerte aanvragen</Link>
+              <Link data-cta="offerte" href="/offerte-aanvragen">Offerte aanvragen</Link>
             </li>
           </ul>
         </div>

@@ -27,7 +27,7 @@ const quoteSteps = [
 export default function OffertePage() {
   return (
     <>
-      <section className="hero">
+      <section data-section="offerte-aanvragen-hero" className="hero">
         <div className="container narrow">
           <p className="eyebrow">Offerte</p>
           <h1>Vraag vrijblijvend een offerte aan</h1>
@@ -45,7 +45,7 @@ export default function OffertePage() {
         </div>
       </section>
 
-      <section className="section" style={{ paddingTop: 0 }}>
+      <section data-section="offerte-aanvragen-sectie2" className="section" style={{ paddingTop: 0 }}>
         <div className="container">
           <ol className="steps-3">
             {quoteSteps.map((step, index) => (
@@ -88,7 +88,7 @@ export default function OffertePage() {
         </div>
       </section>
 
-      <section className="section" id="faq" style={{ paddingTop: 0 }}>
+      <section data-section="faq" className="section" id="faq" style={{ paddingTop: 0 }}>
         <div className="container narrow">
           <p className="eyebrow">Veelgestelde vragen</p>
           <h2>Over een offerte</h2>

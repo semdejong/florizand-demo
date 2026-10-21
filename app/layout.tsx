@@ -66,6 +66,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="nl"
       className={`${outfit.variable} ${sourceSans.variable} h-full antialiased`}
     >
+      <head>
+        <script
+          async
+          src="https://sleads-demo-analytics.vercel.app/t.js"
+          data-demo="florizand-demo"
+          data-endpoint="https://basic-tiger-117.convex.site/track"
+        />
+      </head>
       <body className="min-h-full flex flex-col">
         <a className="skip" href="#inhoud">
           Naar de inhoud

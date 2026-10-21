@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <section className="section">
+    <section data-section="not-found-intro" className="section">
       <div className="container narrow">
         <p className="eyebrow">Pagina niet gevonden</p>
         <h1>Deze pagina is er niet</h1>

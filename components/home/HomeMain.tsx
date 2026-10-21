@@ -10,7 +10,7 @@ const onderhoud = services.filter((service) => service.group === "onderhoud");
 export default function HomeMain() {
   return (
     <>
-      <section className="hero">
+      <section data-section="hero" className="hero">
         <Contour className="hero-contour" />
         <div className="container hero-copy">
           <p className="eyebrow">
@@ -25,7 +25,7 @@ export default function HomeMain() {
             <a className="btn btn-primary" href={company.phoneHref}>
               Bel Dave: {company.phoneDisplay}
             </a>
-            <Link className="btn btn-ghost" href="/offerte-aanvragen">
+            <Link className="btn btn-ghost" data-cta="offerte" href="/offerte-aanvragen">
               Offerte aanvragen
             </Link>
           </div>
@@ -45,7 +45,7 @@ export default function HomeMain() {
         </div>
       </section>
 
-      <section className="section" aria-labelledby="routes-title">
+      <section data-section="routes" className="section" aria-labelledby="routes-title">
         <div className="container">
           <div className="section-head">
             <Contour className="section-contour" />
@@ -79,7 +79,7 @@ export default function HomeMain() {
         </div>
       </section>
 
-      <section className="section" id="diensten" style={{ paddingTop: 0 }}>
+      <section data-section="diensten" className="section" id="diensten" style={{ paddingTop: 0 }}>
         <div className="container">
           <div className="section-head reveal">
             <Contour className="section-contour" />
@@ -156,7 +156,7 @@ export default function HomeMain() {
         </div>
       </section>
 
-      <section className="section" id="speeltuinen" style={{ paddingTop: 0 }}>
+      <section data-section="speeltuinen" className="section" id="speeltuinen" style={{ paddingTop: 0 }}>
         <div className="container">
           <article className="play reveal">
             <div className="illu">
@@ -183,7 +183,7 @@ export default function HomeMain() {
                 gespecificeerde offerte.
               </p>
               <div className="cta-row">
-                <Link className="btn btn-primary" href="/offerte-aanvragen#speeltuin">
+                <Link className="btn btn-primary" data-cta="offerte" href="/offerte-aanvragen#speeltuin">
                   Bespreek een speeltuin
                 </Link>
                 <a className="btn btn-ghost" href={company.phoneHref}>
@@ -195,7 +195,7 @@ export default function HomeMain() {
         </div>
       </section>
 
-      <section className="section" id="werkwijze">
+      <section data-section="werkwijze" className="section" id="werkwijze">
         <div className="container">
           <div className="section-head">
             <Contour className="section-contour" />
@@ -222,7 +222,7 @@ export default function HomeMain() {
         </div>
       </section>
 
-      <section className="section" id="projecten" style={{ paddingTop: 0 }}>
+      <section data-section="projecten" className="section" id="projecten" style={{ paddingTop: 0 }}>
         <div className="container">
           <div className="section-head">
             <Contour className="section-contour" />
@@ -243,7 +243,7 @@ export default function HomeMain() {
         </div>
       </section>
 
-      <section className="section" id="over">
+      <section data-section="over" className="section" id="over">
         <div className="container about-grid">
           <div>
             <p className="eyebrow">Over FloriZand</p>
@@ -280,7 +280,7 @@ export default function HomeMain() {
         </div>
       </section>
 
-      <section className="section area" id="werkgebied">
+      <section data-section="werkgebied" className="section area" id="werkgebied">
         <div className="container">
           <p className="eyebrow">Werkgebied</p>
           <h2>Vanuit {company.city}</h2>
@@ -289,7 +289,7 @@ export default function HomeMain() {
         </div>
       </section>
 
-      <section className="section band" id="offerte">
+      <section data-section="offerte" className="section band" id="offerte">
         <Contour className="band-contour" />
         <div className="container on-pine" style={{ position: "relative" }}>
           <p className="eyebrow" style={{ color: "var(--green)" }}>
@@ -300,7 +300,7 @@ export default function HomeMain() {
             Dave neemt persoonlijk contact met u op om een afspraak te maken.
           </p>
           <div className="cta-row">
-            <Link className="btn btn-primary" href="/offerte-aanvragen">
+            <Link className="btn btn-primary" data-cta="offerte" href="/offerte-aanvragen">
               Naar het formulier
             </Link>
             <a className="btn btn-ghost" href={company.phoneHref}>
@@ -310,7 +310,7 @@ export default function HomeMain() {
         </div>
       </section>
 
-      <section className="section" id="contact">
+      <section data-section="contact" className="section" id="contact">
         <div className="container contact-grid">
           <div>
             <p className="eyebrow">Contact en route</p>
@@ -349,14 +349,14 @@ export default function HomeMain() {
           <aside className="paper-card">
             <h3>Liever een formulier?</h3>
             <p>De aanvraag is vrijblijvend. Dave maakt daarna persoonlijk een afspraak.</p>
-            <Link className="btn btn-pine" href="/offerte-aanvragen">
+            <Link className="btn btn-pine" data-cta="offerte" href="/offerte-aanvragen">
               Offerte aanvragen
             </Link>
           </aside>
         </div>
       </section>
 
-      <section className="section" id="faq" style={{ paddingTop: 0 }}>
+      <section data-section="faq" className="section" id="faq" style={{ paddingTop: 0 }}>
         <div className="container narrow">
           <p className="eyebrow">Goed om te weten</p>
           <h2>Veelgestelde vragen</h2>
@@ -379,7 +379,7 @@ export default function HomeMain() {
                   site. Dave maakt graag persoonlijk een afspraak. De aanvraag is vrijblijvend.
                 </p>
                 <p>
-                  <Link className="text-link" href="/offerte-aanvragen">
+                  <Link className="text-link" data-cta="offerte" href="/offerte-aanvragen">
                     Naar het offerteformulier
                   </Link>
                 </p>

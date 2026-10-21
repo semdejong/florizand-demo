@@ -17,7 +17,7 @@ export default function ContactPage() {
         title="Op afspraak, via Dave"
         lede={welcome.appointment}
       />
-      <section className="section" style={{ paddingTop: 0 }}>
+      <section data-section="contact-intro" className="section" style={{ paddingTop: 0 }}>
         <div className="container contact-layout">
           <div className="phone-hero">
             <p className="eyebrow">Bel Dave</p>
@@ -49,7 +49,7 @@ export default function ContactPage() {
         </div>
         <div className="container" style={{ marginTop: "2rem" }}>
           <div className="paths">
-            <Link className="path-card path-new" href="/offerte-aanvragen">
+            <Link className="path-card path-new" data-cta="offerte" href="/offerte-aanvragen">
               <p className="eyebrow">Schriftelijk</p>
               <h2>Vraag vrijblijvend een offerte aan</h2>
               <p>Het formulier opent een e-mail naar {company.email}. Er wordt niets opgeslagen.</p>

@@ -40,7 +40,7 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
       <div className="container">
         <PlanRuler active={service.id} />
       </div>
-      <section className="section">
+      <section data-section="dienst-detail" className="section">
         <div className="container service-layout">
           <div>
             <div className="illu sheet-photo">
@@ -58,7 +58,7 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
               ))}
             </ul>
             <div className="cta-row">
-              <Link className="btn btn-primary" href={service.id === "speeltuinen" ? "/offerte-aanvragen#speeltuin" : "/offerte-aanvragen"}>
+              <Link className="btn btn-primary" data-cta="offerte" href={service.id === "speeltuinen" ? "/offerte-aanvragen#speeltuin" : "/offerte-aanvragen"}>
                 Offerte aanvragen
               </Link>
               <a className="btn btn-ghost" href={company.phoneHref}>
@@ -80,7 +80,7 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
               </a>
             </p>
             <div className="cta-row">
-              <Link className="btn btn-primary" href={service.id === "speeltuinen" ? "/offerte-aanvragen#speeltuin" : "/offerte-aanvragen"}>
+              <Link className="btn btn-primary" data-cta="offerte" href={service.id === "speeltuinen" ? "/offerte-aanvragen#speeltuin" : "/offerte-aanvragen"}>
                 Offerte aanvragen
               </Link>
             </div>

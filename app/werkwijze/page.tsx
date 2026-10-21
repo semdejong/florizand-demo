@@ -18,7 +18,7 @@ export default function WerkwijzePage() {
         title="Van kennismaking tot oplevering"
         lede="Vijf stappen, van de eerste afspraak met Dave tot de opgeleverde tuin."
       />
-      <section className="section" style={{ paddingTop: 0 }}>
+      <section data-section="werkwijze-intro" className="section" style={{ paddingTop: 0 }}>
         <div className="container werk-layout">
           <ol className="process process-rich">
             {stepStory.map((step, index) => (
@@ -43,7 +43,7 @@ export default function WerkwijzePage() {
                 {company.email}
               </a>
             </p>
-            <Link className="btn btn-primary" href="/offerte-aanvragen">
+            <Link className="btn btn-primary" data-cta="offerte" href="/offerte-aanvragen">
               Naar het formulier
             </Link>
           </aside>
